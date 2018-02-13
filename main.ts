@@ -1,7 +1,7 @@
 import { app, BrowserWindow, screen } from "electron";
 import * as path from "path";
 
-let win, serve;
+let win, serve, splash;
 const args = process.argv.slice(1);
 serve = args.some(val => val === "--serve");
 import * as url from "url";
@@ -18,7 +18,10 @@ function createWindow() {
   win = new BrowserWindow({
     width: size.width,
     height: size.height,
-    frame: false
+    frame: false,
+    minHeight: 400,
+    minWidth: 1000,
+    show: false
   });
 
   // and load the index.html of the app.
@@ -35,6 +38,27 @@ function createWindow() {
     win.webContents.openDevTools();
   }
 
+  splash = new BrowserWindow({
+    width: 810,
+    height: 610,
+    transparent: true,
+    frame: false,
+    alwaysOnTop: true
+  });
+
+  splash.loadURL(
+    url.format({
+      protocol: "file:",
+      pathname: path.join(__dirname, "/splash.html"),
+      slashes: true
+    })
+  );
+
+  setTimeout(() => {
+    splash.destroy();
+    win.show();
+  }, 30000);
+  // win.once("ready-to-show", () => {});
   // Emitted when the window is closed.
   win.on("closed", () => {
     // Dereference the window object, usually you would store window
@@ -49,6 +73,7 @@ try {
   // initialization and is ready to create browser windows.
   // Some APIs can only be used after this event occurs.
   app.on("ready", createWindow);
+  // if main window is ready to show, then destroy the splash window and show up the main window
 
   // Quit when all windows are closed.
   app.on("window-all-closed", () => {

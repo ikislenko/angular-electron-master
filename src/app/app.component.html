@@ -1,1 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-faded" style="-webkit-app-region: drag; margin: 0;">
+  <div class=" flex-md-column">
+    <a class="navbar-brand justify-content-begin" href="#" tyle="-webkit-app-region: no-drag; width:100%;">Navbar</a>
+    <div class="input-group">
+      <div class="dropdown mb-2" dropdown style="-webkit-app-region: no-drag; ">
+        <div class="dropdown-toggle" dropdownToggle>File</div>
+        <ul class="dropdown-menu" dropdownMenu>
+          <li>
+            <a class="neat" href="#">Menu1</a>
+          </li>
+          <li>
+            <a class="neat" href="#">Menu2</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown mb-2" dropdown style="-webkit-app-region: no-drag; ">
+        <div class="dropdown-toggle" dropdownToggle>Service</div>
+        <ul class="dropdown-menu" dropdownMenu>
+          <li>
+            <a class="neat" href="#">Menu1</a>
+          </li>
+          <li>
+            <a class="neat" href="#">Menu2</a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown mb-2" dropdown style="-webkit-app-region: no-drag; ">
+        <div class="dropdown-toggle" dropdownToggle>About</div>
+        <ul class="dropdown-menu" dropdownMenu>
+          <li>
+            <a class="neat" href="#">Menu1</a>
+          </li>
+          <li>
+            <a class="neat" href="#">Menu2</a>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown mb-2" dropdown style="-webkit-app-region: no-drag; ">
+        <div class="dropdown-toggle" dropdownToggle>Help</div>
+        <ul class="dropdown-menu" dropdownMenu>
+          <li>
+            <a class="neat" href="#">Menu1</a>
+          </li>
+          <li>
+            <a class="neat" href="#">Menu2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="navbar-nav mr-auto ">
+  </ul>
+  <button class="btn btn-raised ripple-effect btn-primary " (click)="minEvent($event) " style="-webkit-app-region: no-drag; ">_</button>
+  <button class="btn btn-raised ripple-effect btn-primary " (click)="maxEvent($event) " style="-webkit-app-region: no-drag; ">[]</button>
+  <button class="btn btn-raised ripple-effect btn-danger " (click)="xEvent($event) " style="-webkit-app-region: no-drag; ">x</button>
+</nav>
+
 <router-outlet></router-outlet>

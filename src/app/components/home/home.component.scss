@@ -1,13 +1,15 @@
-.container {
+.container2 {
   height: 100%;
-  display: flex;
+  display: block;
+  // overflow: hidden;
+
   align-items: center;
   justify-content: center;
-
+  // overflow: hidden;
+  z-index: -9999;
   background: url(../../../assets/background.jpg) no-repeat center fixed;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
-  z-index: -99999;
   .title {
     color: white;
     margin: 0;

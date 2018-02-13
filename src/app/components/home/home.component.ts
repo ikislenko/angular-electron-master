@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-const remote = require("electron").remote;
 
 @Component({
   selector: "app-home",
@@ -10,23 +9,4 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  minEvent(event) {
-    var window = remote.getCurrentWindow();
-    window.minimize();
-  }
-
-  maxEvent(event) {
-    var window = remote.getCurrentWindow();
-    if (!window.isMaximized()) {
-      window.maximize();
-    } else {
-      window.unmaximize();
-    }
-  }
-
-  xEvent(event) {
-    var window = remote.getCurrentWindow();
-    window.close();
-  }
 }
